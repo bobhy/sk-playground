@@ -1,0 +1,23 @@
+{
+  "name": "sk-playground",
+  "version": "1.0.0",
+  "description": "Testbed to integrate signalK server and plugins to play back pre-recorded logs. Used to test plugins and webapps.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobhy/sk-playground.git"
+  },
+  "author": "Bob Hyman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobhy/sk-playground/issues"
+  },
+  "homepage": "https://github.com/bobhy/sk-playground#readme",
+  "dependencies": {
+    "signalk-pump-meter": "file:../signalk-pump-meter",
+    "signalk-server": "file:../signalk-server"
+  }
+}

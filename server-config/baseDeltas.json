@@ -1,0 +1,18 @@
+[
+  {
+    "context": "vessels.self",
+    "updates": [
+      {
+        "values": [
+          {
+            "path": "",
+            "value": {
+              "uuid": "urn:mrn:signalk:uuid:aac482d3-6db0-41e4-bb40-c468c0b0bb5a",
+              "name": "Playground-Vessel"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
