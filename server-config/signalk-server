@@ -1,2 +1,2 @@
 #!/bin/sh
-/home/bobhy/src1/signalk-server/bin/signalk-server -c ./server-config $*
+/home/bobhy/src/sk/signalk-server/bin/signalk-server -c server-config $*

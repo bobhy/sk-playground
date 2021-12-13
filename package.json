@@ -4,7 +4,8 @@
   "description": "Testbed to integrate signalK server and plugins to play back pre-recorded logs. Used to test plugins and webapps.",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "jasmine",
+    "server": "server-config/signalk-server"
   },
   "repository": {
     "type": "git",
