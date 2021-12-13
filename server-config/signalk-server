@@ -1,2 +1,2 @@
 #!/bin/sh
-/home/bobhy/src/sk/signalk-server/bin/signalk-server -c server-config $*
+$PWD/node_modules/signalk-server/bin/signalk-server -c `dirname $0` $*

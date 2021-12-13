@@ -1,0 +1,17 @@
+{
+  "allow_readonly": true,
+  "expiration": "1d",
+  "secretKey": "0352429d4e9a0bca7e93a89c8a97abbb665a433c6e3ce77531a75ea5e964a6ece429d1b4d17fe62433fe3f65a002a4464c7ef1c09135c4ac57ae74c19e00adf01add5eaedca515370f1e90570cfe9053981f1de7a38f0f1e9b9056a23eeb8b6868cbbd435c7493f5d831a5dc62f866c99d0311d7613aff2a0c13bd6c9551a88e810387657f1187065e7db52f03fbc36580a6cc32144ca38dcc5841646dd1d1cf3133fd23cf67a59ac9351a981695cf3fe22e8563296af9a2b0e363946933b66131b858e672c10e28f7e5e8d43fc3932fb8dd81d34a9d48ba43bc6762cee84f101bef9829300182dbe447001b5db24bb752077bbe19e4f4b1abde0069b4fd808e",
+  "users": [
+    {
+      "username": "bob",
+      "type": "admin",
+      "password": "$2a$10$0f1kdxHLuUxRMqvLAFpcNutqtfXSXxq6Fk6zjkP5k.pKGaPCOXKZa"
+    }
+  ],
+  "devices": [],
+  "immutableConfig": false,
+  "acls": [],
+  "allowDeviceAccessRequests": true,
+  "allowNewUserRegistration": true
+}
