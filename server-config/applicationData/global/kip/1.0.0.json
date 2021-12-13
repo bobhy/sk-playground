@@ -1,0 +1,931 @@
+{
+  "sk-playground": {
+    "app": {
+      "configVersion": 6,
+      "kipUUID": "37ed9a86-8d8d-4f80-a979-c41e3e9ca9fb",
+      "signalKUrl": "http://localhost:3000",
+      "signalKToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZpY2UiOiIzN2VkOWE4Ni04ZDhkLTRmODAtYTk3OS1jNDFlM2U5Y2E5ZmIiLCJpYXQiOjE2Mzk0MzQyNzF9.TDbqosGOmOdllre5zrvWXG_TngxGRWwN-4rWg84xw4s",
+      "dataSets": [
+        {
+          "uuid": "afbe4e41-26f5-404f-a55d-9f7b9b76fbd1",
+          "path": "self.environment.wind.speedTrue",
+          "signalKSource": "default",
+          "updateTimer": 1,
+          "dataPoints": 15
+        }
+      ],
+      "unitDefaults": {
+        "Unitless": "unitless",
+        "Speed": "knots",
+        "Flow": "l/h",
+        "Temperature": "celsius",
+        "Length": "m",
+        "Volume": "liter",
+        "Current": "A",
+        "Potential": "V",
+        "Charge": "C",
+        "Power": "W",
+        "Energy": "J",
+        "Pressure": "mmHg",
+        "Density": "kg/m3",
+        "Time": "Hours",
+        "Angular Velocity": "deg/min",
+        "Angle": "deg",
+        "Frequency": "Hz",
+        "Ratio": "ratio"
+      },
+      "notificationConfig": {
+        "disableNotifications": false,
+        "menuGrouping": true,
+        "security": {
+          "disableSecurity": true
+        },
+        "devices": {
+          "disableDevices": false,
+          "showNormalState": true
+        },
+        "sound": {
+          "disableSound": false,
+          "muteNormal": true,
+          "muteWarning": false,
+          "muteAlert": true,
+          "muteAlarm": false,
+          "muteEmergency": false
+        }
+      }
+    },
+    "widget": {
+      "widgets": [
+        {
+          "uuid": "7298b3be-232f-48bf-9b3d-3b445131a908",
+          "type": "WidgetNumeric",
+          "config": {
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.environment.depth.belowTransducer",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "m"
+              }
+            },
+            "displayName": "Depth",
+            "filterSelfPaths": true,
+            "showMin": false,
+            "showMax": false,
+            "numDecimal": 1,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "7298b3be-232f-48bf-9b3d-3b433131a908",
+          "type": "WidgetWindComponent",
+          "config": {
+            "paths": {
+              "headingPath": {
+                "description": "Heading",
+                "path": "self.navigation.courseOverGroundTrue",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "deg"
+              },
+              "trueWindAngle": {
+                "description": "True Wind Angle",
+                "path": "self.environment.wind.angleTrueWater",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "deg"
+              },
+              "trueWindSpeed": {
+                "description": "True Wind Speed",
+                "path": "self.environment.wind.speedTrue",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "knots"
+              },
+              "appWindAngle": {
+                "description": "Apparent Wind Angle",
+                "path": "self.environment.wind.angleApparent",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "deg"
+              },
+              "appWindSpeed": {
+                "description": "Apparent Wind Speed",
+                "path": "self.environment.wind.speedApparent",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "knots"
+              }
+            },
+            "filterSelfPaths": true,
+            "windSectorEnable": true,
+            "windSectorWindowSeconds": 10,
+            "laylineEnable": true,
+            "laylineAngle": 35
+          }
+        },
+        {
+          "uuid": "912b86e4-e068-49e9-9f75-a2292d772578",
+          "type": "WidgetGaugeNgRadialComponent",
+          "config": {
+            "displayName": "SOG",
+            "filterSelfPaths": true,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.navigation.speedOverGround",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "knots"
+              }
+            },
+            "gaugeType": "ngRadial",
+            "gaugeTicks": false,
+            "radialSize": "measuring",
+            "minValue": 0,
+            "maxValue": 10,
+            "numInt": 1,
+            "numDecimal": 1,
+            "barColor": "accent",
+            "compassUseNumbers": false
+          }
+        },
+        {
+          "uuid": "85525ebc-c40c-41e6-8379-05d573a331e1",
+          "type": "WidgetGaugeNgLinearComponent",
+          "config": {
+            "displayName": "Apparent Wind Speed",
+            "filterSelfPaths": true,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.environment.wind.speedApparent",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "knots"
+              }
+            },
+            "gaugeType": "ngLinearHorizontal",
+            "gaugeTicks": true,
+            "minValue": 0,
+            "maxValue": 30,
+            "numInt": 1,
+            "numDecimal": 1,
+            "barColor": "accent"
+          }
+        },
+        {
+          "uuid": "a49a59c6-b83d-40e0-b759-9d153da69105",
+          "type": "WidgetNumeric",
+          "config": {
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.navigation.speedThroughWater",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "knots"
+              }
+            },
+            "displayName": "Speed",
+            "filterSelfPaths": true,
+            "showMin": true,
+            "showMax": true,
+            "numDecimal": 1,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "62fa8155-10fd-49cb-a495-cee6e9491b8a",
+          "type": "WidgetNumeric",
+          "config": {
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.performance.velocityMadeGood",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "knots"
+              }
+            },
+            "displayName": "VMG",
+            "filterSelfPaths": true,
+            "showMin": true,
+            "showMax": true,
+            "numDecimal": 1,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "66eb9453-73a2-4f69-9fc6-ececd3f96ce6",
+          "type": "WidgetGaugeNgRadialComponent",
+          "config": {
+            "displayName": "COG (True)",
+            "filterSelfPaths": true,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.navigation.courseOverGroundTrue",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "deg"
+              }
+            },
+            "gaugeType": "ngRadial",
+            "gaugeTicks": false,
+            "radialSize": "baseplateCompass",
+            "minValue": 0,
+            "maxValue": 360,
+            "numInt": 1,
+            "numDecimal": 0,
+            "barColor": "accent",
+            "compassUseNumbers": false
+          }
+        },
+        {
+          "uuid": "03067da4-28fd-4a20-bd21-888af7a75f73",
+          "type": "WidgetSimpleLinearComponent",
+          "config": {
+            "displayName": "Service Bat Voltage",
+            "filterSelfPaths": false,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.1.voltage",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "V"
+              }
+            },
+            "minValue": 0,
+            "maxValue": 18,
+            "numInt": 1,
+            "numDecimal": 2,
+            "gaugeType": "simpleLinear",
+            "gaugeUnitLabelFormat": "full",
+            "barColor": "accent"
+          }
+        },
+        {
+          "uuid": "d425dd21-0db7-4db2-ab58-04942617f71d",
+          "type": "WidgetSimpleLinearComponent",
+          "config": {
+            "displayName": "Service Battery",
+            "filterSelfPaths": true,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.1.current",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "A"
+              }
+            },
+            "minValue": 0,
+            "maxValue": 400,
+            "numInt": 1,
+            "numDecimal": 2,
+            "gaugeType": "simpleLinear",
+            "gaugeUnitLabelFormat": "full",
+            "barColor": "accent"
+          }
+        },
+        {
+          "uuid": "49c84cc0-d765-43a2-bb24-8315bd95b6fb",
+          "type": "WidgetBlank",
+          "config": null
+        },
+        {
+          "uuid": "8740c678-8b4d-436f-9655-0a0aad0c41d4",
+          "type": "WidgetNumeric",
+          "config": {
+            "displayName": "volts",
+            "filterSelfPaths": true,
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.1.voltage",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "unitless"
+              }
+            },
+            "showMax": false,
+            "showMin": false,
+            "numDecimal": 1,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "62f110c0-59e6-4ca5-8149-76866b9e04ee",
+          "type": "WidgetGaugeNgLinearComponent",
+          "config": {
+            "displayName": "volt",
+            "filterSelfPaths": true,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.1.voltage",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "unitless"
+              }
+            },
+            "gaugeType": "ngLinearVertical",
+            "gaugeTicks": true,
+            "minValue": 10,
+            "maxValue": 18,
+            "numInt": 1,
+            "numDecimal": 1,
+            "barColor": "accent"
+          }
+        },
+        {
+          "uuid": "04600185-1fe2-4da4-bd01-4eac8b20c759",
+          "type": "WidgetGaugeNgRadialComponent",
+          "config": {
+            "displayName": null,
+            "filterSelfPaths": true,
+            "paths": {
+              "gaugePath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.1.voltage",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "V"
+              }
+            },
+            "gaugeType": "ngRadial",
+            "gaugeTicks": false,
+            "radialSize": "measuring",
+            "compassUseNumbers": false,
+            "minValue": 0,
+            "maxValue": 20,
+            "numInt": 1,
+            "numDecimal": 1,
+            "barColor": "accent"
+          }
+        },
+        {
+          "uuid": "7dff0b91-75c8-44e8-b5bf-4e8f650cbc52",
+          "type": "WidgetBlank",
+          "config": null
+        },
+        {
+          "uuid": "50002684-6b00-418c-8eb0-a190d19497a5",
+          "type": "WidgetBlank",
+          "config": null
+        },
+        {
+          "uuid": "85de5208-fc17-41cb-a08d-4b5a71e81223",
+          "type": "WidgetBlank",
+          "config": null
+        },
+        {
+          "uuid": "009880aa-30f3-402c-bd91-e91de2d7d3f1",
+          "type": "WidgetBlank",
+          "config": null
+        },
+        {
+          "uuid": "81ebf2cb-172d-4353-943f-8729198b13eb",
+          "type": "WidgetNumeric",
+          "config": {
+            "displayName": "Pump Cycles",
+            "filterSelfPaths": true,
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.254.cycleCount",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "unitless"
+              }
+            },
+            "showMax": true,
+            "showMin": false,
+            "numDecimal": 0,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "e410cb19-a613-4d66-b013-e520d140d2f5",
+          "type": "WidgetBlank",
+          "config": null
+        },
+        {
+          "uuid": "4ddaf836-6ff5-4c29-8ba8-01395013412d",
+          "type": "WidgetNumeric",
+          "config": {
+            "displayName": "Prev cycle runtime",
+            "filterSelfPaths": true,
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.254.lastRunTime",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "s"
+              }
+            },
+            "showMax": true,
+            "showMin": false,
+            "numDecimal": 0,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "5e1c62df-0216-4944-ba1c-5d656af4f166",
+          "type": "WidgetNumeric",
+          "config": {
+            "displayName": "Current cycle runtime",
+            "filterSelfPaths": true,
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.254.runTime",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "s"
+              }
+            },
+            "showMax": true,
+            "showMin": true,
+            "numDecimal": 0,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "5533b70a-277d-4b66-8314-de94cedd7f1f",
+          "type": "WidgetTextGeneric",
+          "config": {
+            "displayName": "Status",
+            "filterSelfPaths": true,
+            "paths": {
+              "stringPath": {
+                "description": "String Data",
+                "path": "self.electrical.batteries.254.status",
+                "source": "default",
+                "pathType": "string",
+                "isPathConfigurable": true
+              }
+            }
+          }
+        },
+        {
+          "uuid": "42a6b981-6877-4da8-a392-a4ea27df4d11",
+          "type": "WidgetNumeric",
+          "config": {
+            "displayName": "Session Start Date",
+            "filterSelfPaths": true,
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.254.sessionStart",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "HH:MM:SS"
+              }
+            },
+            "showMax": false,
+            "showMin": false,
+            "numDecimal": 1,
+            "numInt": 1
+          }
+        },
+        {
+          "uuid": "d804c67c-4b6b-4dbd-999f-30d1772a9d11",
+          "type": "WidgetNumeric",
+          "config": {
+            "displayName": "Prev cycle start ago",
+            "filterSelfPaths": true,
+            "paths": {
+              "numericPath": {
+                "description": "Numeric Data",
+                "path": "self.electrical.batteries.254.lastRunTime",
+                "source": "default",
+                "pathType": "number",
+                "isPathConfigurable": true,
+                "convertUnitTo": "HH:MM:SS"
+              }
+            },
+            "showMax": false,
+            "showMin": false,
+            "numDecimal": 1,
+            "numInt": 1
+          }
+        }
+      ]
+    },
+    "layout": {
+      "splitSets": [
+        {
+          "uuid": "isplitsx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "d107e54d-2db5-4abf-aba7-b96ce19f5abd",
+              "type": "splitSet",
+              "size": 30.079353380503136
+            },
+            {
+              "uuid": "9249373f-7aa4-4673-8004-3e4e900e0b3d",
+              "type": "splitSet",
+              "size": 38.1436713836478
+            },
+            {
+              "uuid": "d5be7f74-28c0-484c-a0cd-e623eb5db837",
+              "type": "splitSet",
+              "size": 31.776975235849058
+            }
+          ]
+        },
+        {
+          "uuid": "9249373f-7aa4-4673-8004-3e4e900e0b3d",
+          "parentUUID": "isplitsx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "7298b3be-232f-48bf-9b3d-3b433131a908",
+              "type": "widget",
+              "size": 71.69133771929825
+            },
+            {
+              "uuid": "85525ebc-c40c-41e6-8379-05d573a331e1",
+              "type": "widget",
+              "size": 28.308662280701753
+            }
+          ]
+        },
+        {
+          "uuid": "d107e54d-2db5-4abf-aba7-b96ce19f5abd",
+          "parentUUID": "isplitsx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "7298b3be-232f-48bf-9b3d-3b445131a908",
+              "type": "widget",
+              "size": 33.13526570048309
+            },
+            {
+              "uuid": "a49a59c6-b83d-40e0-b759-9d153da69105",
+              "type": "widget",
+              "size": 33.432367149758456
+            },
+            {
+              "uuid": "62fa8155-10fd-49cb-a495-cee6e9491b8a",
+              "type": "widget",
+              "size": 33.432367149758456
+            }
+          ]
+        },
+        {
+          "uuid": "d5be7f74-28c0-484c-a0cd-e623eb5db837",
+          "parentUUID": "isplitsx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "53cd169c-2a8b-491e-873a-da873c10b19b",
+              "type": "splitSet",
+              "size": 25
+            }
+          ]
+        },
+        {
+          "uuid": "d735c561-d413-4f7e-93d9-2c494e16184e",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "e2701f01-dbee-424a-a9e3-6c645b47cedf",
+              "type": "splitSet",
+              "size": 100
+            }
+          ]
+        },
+        {
+          "uuid": "53cd169c-2a8b-491e-873a-da873c10b19b",
+          "parentUUID": "d5be7f74-28c0-484c-a0cd-e623eb5db837",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "091d6a89-ad68-42ed-a78a-454ab2c1b3d6",
+              "type": "splitSet",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "091d6a89-ad68-42ed-a78a-454ab2c1b3d6",
+          "parentUUID": "53cd169c-2a8b-491e-873a-da873c10b19b",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "912b86e4-e068-49e9-9f75-a2292d772578",
+              "type": "widget",
+              "size": 50
+            },
+            {
+              "uuid": "03067da4-28fd-4a20-bd21-888af7a75f73",
+              "type": "widget",
+              "size": 25
+            },
+            {
+              "uuid": "d425dd21-0db7-4db2-ab58-04942617f71d",
+              "type": "widget",
+              "size": 25
+            }
+          ]
+        },
+        {
+          "uuid": "e2701f01-dbee-424a-a9e3-6c645b47cedf",
+          "parentUUID": "d735c561-d413-4f7e-93d9-2c494e16184e",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "1bf33ca6-9772-4527-a114-045ac51088d3",
+              "type": "splitSet",
+              "size": 50
+            },
+            {
+              "uuid": "49c84cc0-d765-43a2-bb24-8315bd95b6fb",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "1bf33ca6-9772-4527-a114-045ac51088d3",
+          "parentUUID": "e2701f01-dbee-424a-a9e3-6c645b47cedf",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "66eb9453-73a2-4f69-9fc6-ececd3f96ce6",
+              "type": "widget",
+              "size": 25
+            },
+            {
+              "uuid": "62f110c0-59e6-4ca5-8149-76866b9e04ee",
+              "type": "widget",
+              "size": 25
+            },
+            {
+              "uuid": "019fa5fb-e818-4865-b8ea-fef3f5f74e55",
+              "type": "splitSet",
+              "size": 25
+            },
+            {
+              "uuid": "435f583f-c526-4142-8575-8d232ec994bf",
+              "type": "splitSet",
+              "size": 25
+            }
+          ]
+        },
+        {
+          "uuid": "019fa5fb-e818-4865-b8ea-fef3f5f74e55",
+          "parentUUID": "1bf33ca6-9772-4527-a114-045ac51088d3",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "fa98f9d9-591f-458c-bdc7-13b48bebbd2b",
+              "type": "splitSet",
+              "size": 50
+            },
+            {
+              "uuid": "7dff0b91-75c8-44e8-b5bf-4e8f650cbc52",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "fa98f9d9-591f-458c-bdc7-13b48bebbd2b",
+          "parentUUID": "019fa5fb-e818-4865-b8ea-fef3f5f74e55",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "8740c678-8b4d-436f-9655-0a0aad0c41d4",
+              "type": "widget",
+              "size": 58.06888112316083
+            },
+            {
+              "uuid": "50002684-6b00-418c-8eb0-a190d19497a5",
+              "type": "widget",
+              "size": 41.93111887683917
+            }
+          ]
+        },
+        {
+          "uuid": "435f583f-c526-4142-8575-8d232ec994bf",
+          "parentUUID": "1bf33ca6-9772-4527-a114-045ac51088d3",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "2e672a15-e3bd-4b6a-9a41-bfb09ccf83b7",
+              "type": "splitSet",
+              "size": 69.46127188994461
+            },
+            {
+              "uuid": "85de5208-fc17-41cb-a08d-4b5a71e81223",
+              "type": "widget",
+              "size": 30.538728110055384
+            }
+          ]
+        },
+        {
+          "uuid": "2e672a15-e3bd-4b6a-9a41-bfb09ccf83b7",
+          "parentUUID": "435f583f-c526-4142-8575-8d232ec994bf",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "04600185-1fe2-4da4-bd01-4eac8b20c759",
+              "type": "widget",
+              "size": 57.37736584621917
+            },
+            {
+              "uuid": "009880aa-30f3-402c-bd91-e91de2d7d3f1",
+              "type": "widget",
+              "size": 42.62263415378083
+            }
+          ]
+        },
+        {
+          "uuid": "e322a35b-5877-43f4-bf99-85549bbdac87",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "ca817ce5-4a87-4169-afcf-b6a33cb99c6e",
+              "type": "splitSet",
+              "size": 100
+            }
+          ]
+        },
+        {
+          "uuid": "ca817ce5-4a87-4169-afcf-b6a33cb99c6e",
+          "parentUUID": "e322a35b-5877-43f4-bf99-85549bbdac87",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "dbb0d654-e96c-4c40-af43-61ac4aa3edc9",
+              "type": "splitSet",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "dbb0d654-e96c-4c40-af43-61ac4aa3edc9",
+          "parentUUID": "ca817ce5-4a87-4169-afcf-b6a33cb99c6e",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "ae1a29df-2563-4a0a-9122-67bd48b86b39",
+              "type": "splitSet",
+              "size": 50
+            },
+            {
+              "uuid": "e410cb19-a613-4d66-b013-e520d140d2f5",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "ae1a29df-2563-4a0a-9122-67bd48b86b39",
+          "parentUUID": "dbb0d654-e96c-4c40-af43-61ac4aa3edc9",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "b647b6fb-081c-4bc9-b995-4ec6efe0a4fd",
+              "type": "splitSet",
+              "size": 26.93648445835821
+            },
+            {
+              "uuid": "881158ab-f8c1-4496-9927-16339da5d7c2",
+              "type": "splitSet",
+              "size": 23.063515541641788
+            },
+            {
+              "uuid": "0f5c6a7a-e439-4eac-88f2-446bee1c55d3",
+              "type": "splitSet",
+              "size": 25
+            }
+          ]
+        },
+        {
+          "uuid": "b647b6fb-081c-4bc9-b995-4ec6efe0a4fd",
+          "parentUUID": "ae1a29df-2563-4a0a-9122-67bd48b86b39",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "81ebf2cb-172d-4353-943f-8729198b13eb",
+              "type": "widget",
+              "size": 50
+            },
+            {
+              "uuid": "5533b70a-277d-4b66-8314-de94cedd7f1f",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "881158ab-f8c1-4496-9927-16339da5d7c2",
+          "parentUUID": "ae1a29df-2563-4a0a-9122-67bd48b86b39",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "5e1c62df-0216-4944-ba1c-5d656af4f166",
+              "type": "widget",
+              "size": 50
+            },
+            {
+              "uuid": "42a6b981-6877-4da8-a392-a4ea27df4d11",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "0f5c6a7a-e439-4eac-88f2-446bee1c55d3",
+          "parentUUID": "ae1a29df-2563-4a0a-9122-67bd48b86b39",
+          "direction": "horizontal",
+          "splitAreas": [
+            {
+              "uuid": "4ddaf836-6ff5-4c29-8ba8-01395013412d",
+              "type": "widget",
+              "size": 50
+            },
+            {
+              "uuid": "d804c67c-4b6b-4dbd-999f-30d1772a9d11",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        }
+      ],
+      "rootSplits": [
+        "isplitsx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",
+        "d735c561-d413-4f7e-93d9-2c494e16184e",
+        "e322a35b-5877-43f4-bf99-85549bbdac87"
+      ]
+    },
+    "theme": {
+      "themeName": "modern-dark"
+    },
+    "zones": {
+      "zones": [
+        {
+          "uuid": "b5b98be8-44a8-483e-8308-611e12493d07",
+          "upper": 11,
+          "lower": 0,
+          "path": "self.electrical.batteries.1.voltage",
+          "unit": "V",
+          "state": 2
+        },
+        {
+          "uuid": "101b166a-7708-45a5-9fd0-a1f67b63e1d0",
+          "upper": 12.3,
+          "lower": 11,
+          "path": "self.electrical.batteries.1.voltage",
+          "unit": "V",
+          "state": 1
+        },
+        {
+          "uuid": "4ff9b6ab-8c87-420e-af81-221b752373f4",
+          "upper": 14.8,
+          "lower": 12.5,
+          "path": "self.electrical.batteries.1.voltage",
+          "unit": "V",
+          "state": 0
+        },
+        {
+          "uuid": "1195141b-cfa7-4535-a83c-5194c2dd1ac2",
+          "upper": 18,
+          "lower": 14.8,
+          "path": "self.electrical.batteries.1.voltage",
+          "unit": "V",
+          "state": 1
+        }
+      ]
+    }
+  }
+}

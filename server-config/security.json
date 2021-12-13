@@ -9,7 +9,13 @@
       "password": "$2a$10$0f1kdxHLuUxRMqvLAFpcNutqtfXSXxq6Fk6zjkP5k.pKGaPCOXKZa"
     }
   ],
-  "devices": [],
+  "devices": [
+    {
+      "clientId": "37ed9a86-8d8d-4f80-a979-c41e3e9ca9fb",
+      "permissions": "admin",
+      "description": "Kip web app"
+    }
+  ],
   "immutableConfig": false,
   "acls": [],
   "allowDeviceAccessRequests": true,
