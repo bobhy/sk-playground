@@ -14,6 +14,11 @@
       "clientId": "37ed9a86-8d8d-4f80-a979-c41e3e9ca9fb",
       "permissions": "admin",
       "description": "Kip web app"
+    },
+    {
+      "clientId": "a6fc4de1-9595-432c-b72a-9b7f6739e220",
+      "permissions": "admin",
+      "description": "Kip web app"
     }
   ],
   "immutableConfig": false,

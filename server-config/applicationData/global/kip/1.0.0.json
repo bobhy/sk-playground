@@ -2,7 +2,7 @@
   "sk-playground": {
     "app": {
       "configVersion": 6,
-      "kipUUID": "37ed9a86-8d8d-4f80-a979-c41e3e9ca9fb",
+      "kipUUID": "a6fc4de1-9595-432c-b72a-9b7f6739e220",
       "signalKUrl": "http://localhost:3000",
       "signalKToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXZpY2UiOiIzN2VkOWE4Ni04ZDhkLTRmODAtYTk3OS1jNDFlM2U5Y2E5ZmIiLCJpYXQiOjE2Mzk0MzQyNzF9.TDbqosGOmOdllre5zrvWXG_TngxGRWwN-4rWg84xw4s",
       "dataSets": [
@@ -426,11 +426,6 @@
           }
         },
         {
-          "uuid": "e410cb19-a613-4d66-b013-e520d140d2f5",
-          "type": "WidgetBlank",
-          "config": null
-        },
-        {
           "uuid": "4ddaf836-6ff5-4c29-8ba8-01395013412d",
           "type": "WidgetNumeric",
           "config": {
@@ -475,32 +470,15 @@
           }
         },
         {
-          "uuid": "5533b70a-277d-4b66-8314-de94cedd7f1f",
-          "type": "WidgetTextGeneric",
-          "config": {
-            "displayName": "Status",
-            "filterSelfPaths": true,
-            "paths": {
-              "stringPath": {
-                "description": "String Data",
-                "path": "self.electrical.batteries.254.status",
-                "source": "default",
-                "pathType": "string",
-                "isPathConfigurable": true
-              }
-            }
-          }
-        },
-        {
-          "uuid": "42a6b981-6877-4da8-a392-a4ea27df4d11",
+          "uuid": "d804c67c-4b6b-4dbd-999f-30d1772a9d11",
           "type": "WidgetNumeric",
           "config": {
-            "displayName": "Session Start Date",
+            "displayName": "Prev cycle start ago",
             "filterSelfPaths": true,
             "paths": {
               "numericPath": {
                 "description": "Numeric Data",
-                "path": "self.electrical.batteries.254.sessionStart",
+                "path": "self.electrical.batteries.254.lastRunTime",
                 "source": "default",
                 "pathType": "number",
                 "isPathConfigurable": true,
@@ -514,15 +492,32 @@
           }
         },
         {
-          "uuid": "d804c67c-4b6b-4dbd-999f-30d1772a9d11",
+          "uuid": "3fe04250-fd0b-4d38-97a0-717cb1c25776",
+          "type": "WidgetTextGeneric",
+          "config": {
+            "displayName": "Pump Status",
+            "filterSelfPaths": true,
+            "paths": {
+              "stringPath": {
+                "description": "String Data",
+                "path": "self.electrical.batteries.254.status",
+                "source": "default",
+                "pathType": "string",
+                "isPathConfigurable": true
+              }
+            }
+          }
+        },
+        {
+          "uuid": "44219dad-1bb3-45a2-90c0-bfdfed9d08f0",
           "type": "WidgetNumeric",
           "config": {
-            "displayName": "Prev cycle start ago",
+            "displayName": "Monitoring history",
             "filterSelfPaths": true,
             "paths": {
               "numericPath": {
                 "description": "Numeric Data",
-                "path": "self.electrical.batteries.254.lastRunTime",
+                "path": "self.electrical.batteries.254.sessionStart",
                 "source": "default",
                 "pathType": "number",
                 "isPathConfigurable": true,
@@ -800,11 +795,6 @@
               "uuid": "ae1a29df-2563-4a0a-9122-67bd48b86b39",
               "type": "splitSet",
               "size": 50
-            },
-            {
-              "uuid": "e410cb19-a613-4d66-b013-e520d140d2f5",
-              "type": "widget",
-              "size": 50
             }
           ]
         },
@@ -838,12 +828,12 @@
             {
               "uuid": "81ebf2cb-172d-4353-943f-8729198b13eb",
               "type": "widget",
-              "size": 50
+              "size": 25
             },
             {
-              "uuid": "5533b70a-277d-4b66-8314-de94cedd7f1f",
+              "uuid": "44219dad-1bb3-45a2-90c0-bfdfed9d08f0",
               "type": "widget",
-              "size": 50
+              "size": 25
             }
           ]
         },
@@ -858,9 +848,9 @@
               "size": 50
             },
             {
-              "uuid": "42a6b981-6877-4da8-a392-a4ea27df4d11",
-              "type": "widget",
-              "size": 50
+              "uuid": "a8f81f59-4531-4d6c-a096-5764fe5106fb",
+              "type": "splitSet",
+              "size": 25
             }
           ]
         },
@@ -876,6 +866,18 @@
             },
             {
               "uuid": "d804c67c-4b6b-4dbd-999f-30d1772a9d11",
+              "type": "widget",
+              "size": 50
+            }
+          ]
+        },
+        {
+          "uuid": "a8f81f59-4531-4d6c-a096-5764fe5106fb",
+          "parentUUID": "881158ab-f8c1-4496-9927-16339da5d7c2",
+          "direction": "vertical",
+          "splitAreas": [
+            {
+              "uuid": "3fe04250-fd0b-4d38-97a0-717cb1c25776",
               "type": "widget",
               "size": 50
             }
