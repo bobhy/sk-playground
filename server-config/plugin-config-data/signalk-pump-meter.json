@@ -3,9 +3,9 @@
     "devices": [
       {
         "name": "bilge1",
-        "skMonitorPath": "electrical.batteries.254.current",
+        "skMonitorPath": "electrical.batteries.2.current",
         "skRunStatsPath": "electrical.batteries.254",
-        "secReportInterval": 30,
+        "secReportInterval": 1,
         "secTimeout": 300
       }
     ]

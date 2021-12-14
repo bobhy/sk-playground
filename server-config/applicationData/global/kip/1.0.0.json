@@ -429,19 +429,19 @@
           "uuid": "4ddaf836-6ff5-4c29-8ba8-01395013412d",
           "type": "WidgetNumeric",
           "config": {
-            "displayName": "Prev cycle runtime",
+            "displayName": "Total monitoring time",
             "filterSelfPaths": true,
             "paths": {
               "numericPath": {
                 "description": "Numeric Data",
-                "path": "self.electrical.batteries.254.lastRunTime",
+                "path": "self.electrical.batteries.254.sessionStart",
                 "source": "default",
                 "pathType": "number",
                 "isPathConfigurable": true,
-                "convertUnitTo": "s"
+                "convertUnitTo": "HH:MM:SS"
               }
             },
-            "showMax": true,
+            "showMax": false,
             "showMin": false,
             "numDecimal": 0,
             "numInt": 1
@@ -451,7 +451,7 @@
           "uuid": "5e1c62df-0216-4944-ba1c-5d656af4f166",
           "type": "WidgetNumeric",
           "config": {
-            "displayName": "Current cycle runtime",
+            "displayName": "Total runtime",
             "filterSelfPaths": true,
             "paths": {
               "numericPath": {
@@ -463,8 +463,8 @@
                 "convertUnitTo": "s"
               }
             },
-            "showMax": true,
-            "showMin": true,
+            "showMax": false,
+            "showMin": false,
             "numDecimal": 0,
             "numInt": 1
           }
@@ -492,7 +492,7 @@
           }
         },
         {
-          "uuid": "3fe04250-fd0b-4d38-97a0-717cb1c25776",
+          "uuid": "163d18d1-0942-486d-affd-ba126d3bfb32",
           "type": "WidgetTextGeneric",
           "config": {
             "displayName": "Pump Status",
@@ -509,24 +509,24 @@
           }
         },
         {
-          "uuid": "44219dad-1bb3-45a2-90c0-bfdfed9d08f0",
+          "uuid": "d227f8f7-f451-4b9f-920e-71b6601fe20a",
           "type": "WidgetNumeric",
           "config": {
-            "displayName": "Monitoring history",
+            "displayName": "Last run",
             "filterSelfPaths": true,
             "paths": {
               "numericPath": {
                 "description": "Numeric Data",
-                "path": "self.electrical.batteries.254.sessionStart",
+                "path": "self.electrical.batteries.254.lastRunTime",
                 "source": "default",
                 "pathType": "number",
                 "isPathConfigurable": true,
-                "convertUnitTo": "HH:MM:SS"
+                "convertUnitTo": "s"
               }
             },
-            "showMax": false,
-            "showMin": false,
-            "numDecimal": 1,
+            "showMax": true,
+            "showMin": true,
+            "numDecimal": 0,
             "numInt": 1
           }
         }
@@ -828,12 +828,12 @@
             {
               "uuid": "81ebf2cb-172d-4353-943f-8729198b13eb",
               "type": "widget",
-              "size": 25
+              "size": 12.5
             },
             {
-              "uuid": "44219dad-1bb3-45a2-90c0-bfdfed9d08f0",
+              "uuid": "163d18d1-0942-486d-affd-ba126d3bfb32",
               "type": "widget",
-              "size": 25
+              "size": 12.5
             }
           ]
         },
@@ -845,11 +845,11 @@
             {
               "uuid": "5e1c62df-0216-4944-ba1c-5d656af4f166",
               "type": "widget",
-              "size": 50
+              "size": 25
             },
             {
-              "uuid": "a8f81f59-4531-4d6c-a096-5764fe5106fb",
-              "type": "splitSet",
+              "uuid": "d227f8f7-f451-4b9f-920e-71b6601fe20a",
+              "type": "widget",
               "size": 25
             }
           ]
@@ -866,18 +866,6 @@
             },
             {
               "uuid": "d804c67c-4b6b-4dbd-999f-30d1772a9d11",
-              "type": "widget",
-              "size": 50
-            }
-          ]
-        },
-        {
-          "uuid": "a8f81f59-4531-4d6c-a096-5764fe5106fb",
-          "parentUUID": "881158ab-f8c1-4496-9927-16339da5d7c2",
-          "direction": "vertical",
-          "splitAreas": [
-            {
-              "uuid": "3fe04250-fd0b-4d38-97a0-717cb1c25776",
               "type": "widget",
               "size": 50
             }

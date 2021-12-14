@@ -1,0 +1,3 @@
+#!/bin/sh
+samp_dir=logstreams
+$PWD/node_modules/signalk-server/bin/signalk-server -c `dirname $0` -s $1.json --samplogfilename /home/bobhy/src/sk/sk-playground/logstreams/$1.data
