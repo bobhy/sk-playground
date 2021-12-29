@@ -1,0 +1,17 @@
+[Unit]
+Description=Run Signalk Server
+DefaultDependencies=no
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=adm
+ExecStart=/home/pi/src/sk-playground/start-service.sh
+WorkingDirectory=/home/pi/src/sk-playground
+TimeoutStartSec=0
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

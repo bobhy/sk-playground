@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jasmine",
-    "server": "server-config/signalk-server"
+    "server": "server-config/signalk-server",
+    "logs": "server-config/serve-log n2k-batt2"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,6 @@
   "homepage": "https://github.com/bobhy/sk-playground#readme",
   "dependencies": {
     "signalk-pump-meter": "file:../signalk-pump-meter",
-    "signalk-server": "file:../signalk-server"
+    "signalk-server": "^1.40.0"
   }
 }
